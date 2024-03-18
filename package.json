@@ -1,0 +1,33 @@
+{
+  "name": "food_e-commerce",
+  "version": "1.0.0",
+  "description": "The web app features/functionality include:\r 1. Login page (i) must be able to log in/out, (ii) change password, (iii) be able to add new users/customers with least privileges\r 2. Input field (such as feedback forum, contact page)\r 3. Buy or sell products\r 4. Database to store data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx watch src/index.ts",
+    "dev": " tsx watch src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/26thavenue/Food_e-commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/26thavenue/Food_e-commerce/issues"
+  },
+  "homepage": "https://github.com/26thavenue/Food_e-commerce#readme",
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/morgan": "^1.9.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "morgan": "^1.10.0",
+    "prisma": "^5.11.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  }
+}
