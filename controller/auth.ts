@@ -17,7 +17,7 @@ export const login = async(req:Request, res:Response) => {
 
         if(!email || !password){
             res.status(400)
-            throw new Error('Please fill all fields')
+            return res.json({message: 'Please fill all the required fields'})
         }
 
         const user = await prisma.user.findFirst({
@@ -28,7 +28,7 @@ export const login = async(req:Request, res:Response) => {
 
         if(!user){
             res.status(400)
-            throw new Error('User not found')
+            return res.json({message: 'Invalid password'})
         }
 
         if(!compareSync(password,user.hashedPassword)){
@@ -77,4 +77,8 @@ export const signUp = async(req:Request, res:Response) => {
         }
     })
     return res.json(user)
+}
+
+export const me = async(req:Request, res:Response) => {
+    return res.json(req.user)
 }

@@ -36,6 +36,7 @@ model Products{
   name String
   price Float
   imageUrl String
+  description String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   cartItems CartItems[]
