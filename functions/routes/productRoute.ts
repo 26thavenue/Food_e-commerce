@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getProduct, getProducts, deleteProduct, createProduct, updateProduct } from "../functions/controller/product";
+import { getProduct, getProducts, deleteProduct, createProduct, updateProduct } from "../controller/product";
 import { authMiddleware } from "../middlewares/authMiddleware";
 import { adminMiddleware } from "../middlewares/admin";
 const productRouter:Router = Router ();

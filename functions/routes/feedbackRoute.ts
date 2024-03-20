@@ -2,7 +2,7 @@ import { Router } from "express";
 import { authMiddleware } from "../middlewares/authMiddleware";
 import { adminMiddleware } from "../middlewares/admin";
 
-import { createFeedback, getAllFeedbacks } from "../functions/controller/feedback";
+import { createFeedback, getAllFeedbacks } from "../controller/feedback";
 
 const feedbackRouter:Router = Router();
 
