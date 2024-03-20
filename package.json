@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && tsc",
-    "start": "tsx watch src/index.ts",
-    "dev": " tsx watch src/index.ts"
+    "start": "tsx watch index.ts",
+    "dev": " tsx watch index.ts"
   },
   "repository": {
     "type": "git",
