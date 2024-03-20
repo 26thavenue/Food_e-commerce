@@ -15,9 +15,8 @@ const bcrypt_1 = require("bcrypt");
 const prisma = new client_1.PrismaClient();
 const getAllUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield prisma.user.findMany().then((users) => {
-            res.status(200).json(users);
-        });
+        const users = yield prisma.user.findMany();
+        return res.json(users).status(200);
     }
     catch (error) {
         console.log(error);
@@ -27,13 +26,10 @@ exports.getAllUsers = getAllUsers;
 const getOneUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     try {
-        yield prisma.user.findUnique({
-            where: {
-                id: id
-            }
-        }).then((user) => {
-            res.status(200).json(user);
+        const user = yield prisma.user.findUnique({
+            where: { id: id }
         });
+        return res.json(user).status(200);
     }
     catch (error) {
         console.log(error);

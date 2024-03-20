@@ -6,9 +6,8 @@ const prisma = new PrismaClient();
 
 export const getAllUsers = async(req: Request, res: Response) => {
     try {
-        await prisma.user.findMany().then((users) => {
-            res.status(200).json(users);
-        });
+        const users = await prisma.user.findMany()
+        return res.json(users).status(200)
     } catch (error) {
         console.log(error);
     }
@@ -17,13 +16,10 @@ export const getAllUsers = async(req: Request, res: Response) => {
 export const getOneUser = async(req: Request, res: Response) => {
     const {id} = req.params;
     try {
-        await prisma.user.findUnique({
-            where: {
-                id: id
-            }
-        }).then((user) => {
-            res.status(200).json(user);
-        });
+        const user = await prisma.user.findUnique({
+            where: {id: id}
+        })
+        return res.json(user).status(200)
     } catch (error) {
         console.log(error);
     }
