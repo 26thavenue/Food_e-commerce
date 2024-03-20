@@ -2,6 +2,8 @@ import express,{Express} from 'express';
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 import routes from '.././routes/index'
+import cors from 'cors'
+
 
 dotenv.config()
 
@@ -9,6 +11,8 @@ dotenv.config()
 const app:Express = express();
 
 app.use(morgan('tiny'))
+
+app.use(cors())
 
 app.use(express.json())
 

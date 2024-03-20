@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "The web app features/functionality include:\r 1. Login page (i) must be able to log in/out, (ii) change password, (iii) be able to add new users/customers with least privileges\r 2. Input field (such as feedback forum, contact page)\r 3. Buy or sell products\r 4. Database to store data",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node bundle.js",
     "start": "tsx watch src/index.ts",
     "dev": " tsx watch src/index.ts"
   },
@@ -39,6 +40,7 @@
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.11.30",
+    "esbuild": "^0.20.2",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.7.1"
