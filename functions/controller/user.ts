@@ -4,9 +4,9 @@ import { hashSync} from 'bcrypt';
 
 const prisma = new PrismaClient();
 
-export const getAllUsers = (req: Request, res: Response) => {
+export const getAllUsers = async(req: Request, res: Response) => {
     try {
-        prisma.user.findMany().then((users) => {
+        await prisma.user.findMany().then((users) => {
             res.status(200).json(users);
         });
     } catch (error) {
@@ -14,10 +14,10 @@ export const getAllUsers = (req: Request, res: Response) => {
     }
 }
 
-export const getOneUser = (req: Request, res: Response) => {
+export const getOneUser = async(req: Request, res: Response) => {
     const {id} = req.params;
     try {
-        prisma.user.findUnique({
+        await prisma.user.findUnique({
             where: {
                 id: id
             }

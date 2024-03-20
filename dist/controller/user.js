@@ -13,21 +13,21 @@ exports.updateUser = exports.getOneUser = exports.getAllUsers = void 0;
 const client_1 = require("@prisma/client");
 const bcrypt_1 = require("bcrypt");
 const prisma = new client_1.PrismaClient();
-const getAllUsers = (req, res) => {
+const getAllUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        prisma.user.findMany().then((users) => {
+        yield prisma.user.findMany().then((users) => {
             res.status(200).json(users);
         });
     }
     catch (error) {
         console.log(error);
     }
-};
+});
 exports.getAllUsers = getAllUsers;
-const getOneUser = (req, res) => {
+const getOneUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     try {
-        prisma.user.findUnique({
+        yield prisma.user.findUnique({
             where: {
                 id: id
             }
@@ -38,7 +38,7 @@ const getOneUser = (req, res) => {
     catch (error) {
         console.log(error);
     }
-};
+});
 exports.getOneUser = getOneUser;
 const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
