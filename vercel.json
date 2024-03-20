@@ -5,7 +5,8 @@
       "src": "dist/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["dist/**", "controllers/**", "middleware/**", "routes/**"]
+        "includeFiles": ["dist/**", "controllers/**", "middleware/**", "routes/**"],
+        "nodeArgsOptions": ["--loader=commonjs"]
       }
     }
   ],
