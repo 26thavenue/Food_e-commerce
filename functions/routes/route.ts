@@ -9,7 +9,7 @@ import feedbackRouter from "./feedbackRoute";
 import contactRouter from "./contactRoute";
 
 
-const routes:Router = Router();
+export const routes:Router = Router();
 
 routes.use('/auth',authRouter);
 routes.use('/product',productRouter);
@@ -19,4 +19,3 @@ routes.use('/order',orderRouter);
 routes.use('/feedback',feedbackRouter);
 routes.use('/contact',contactRouter);
 
-export default routes;
