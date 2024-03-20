@@ -2,7 +2,7 @@ import { Router } from "express";
 import { authMiddleware } from "../middlewares/authMiddleware";
 import { adminMiddleware } from "../middlewares/admin";
 
-import { addItemToCart,getACartItem,getUserCart, deleteItemFromCart, changeQuantity } from "../controller/cart";
+import { addItemToCart,getACartItem,getUserCart, deleteItemFromCart, changeQuantity } from "../functions/controller/cart";
 
 const cartRouter:Router = Router();
 

@@ -2,7 +2,7 @@ import { Router } from "express";
 import { authMiddleware } from "../middlewares/authMiddleware";
 import { adminMiddleware } from "../middlewares/admin";
 
-import { createOrder, getAllUserOrders, deleteOrder } from "../controller/order";
+import { createOrder, getAllUserOrders, deleteOrder } from "../functions/controller/order";
 
 const orderRouter:Router = Router();
 
