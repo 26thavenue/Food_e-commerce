@@ -2,11 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/index.cjs",
+      "src": "dist/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["dist/**", "controllers/**", "middleware/**", "routes/**"],
-        "nodeArgsOptions": ["--loader=commonjs"]
+        "includeFiles": ["dist/**", "controllers/**", "middleware/**", "routes/**"]
       }
     }
   ],

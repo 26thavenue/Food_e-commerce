@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The web app features/functionality include:\r 1. Login page (i) must be able to log in/out, (ii) change password, (iii) be able to add new users/customers with least privileges\r 2. Input field (such as feedback forum, contact page)\r 3. Buy or sell products\r 4. Database to store data",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && tsc",
