@@ -55,7 +55,7 @@ export const signUp = async(req:Request, res:Response) => {
 
     if(!email || !password || !name){
         res.status(400)
-        throw new Error('Please fill all fields')
+        return res.json({message: 'Please fill all the required fields'})
     }
 
     const checkForDuplicteEmail = await prisma.user.findFirst({
@@ -66,7 +66,7 @@ export const signUp = async(req:Request, res:Response) => {
     
     if(checkForDuplicteEmail){
         res.status(500)
-        throw new Error('This email is already in use ') 
+        return res.json({message: 'Email already exists'})
     }
 
     const user = await prisma.user.create({
