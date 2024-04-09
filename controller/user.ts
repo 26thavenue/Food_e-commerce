@@ -36,7 +36,23 @@ export const updateUser = async(req: Request, res: Response) =>{
         return res.json({message:'Name and password are required'}).status(404)
     }
 
+    const user = await prisma.user.findUnique({
+        where: {id:userId}
+    })
+
+    if(!user){
+        return res.json({message:'User not found'}).status(404)
+    }
+
+    const oldPassword = user.hashedPassword
+
+    if(oldPassword === hashSync(password,10)){
+        return res.json({message:'New password is the same as the old one'}).status(400)
+    }
+
     try {
+
+
         
         const updatedUser = await prisma.user.update({
             where: {id:userId },

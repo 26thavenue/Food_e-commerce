@@ -32,6 +32,12 @@ export const createOrder = async(req:Request, res:Response) => {
         return res.json({message:'User not found'}).status(404)
     }
 
+    const items = await prisma.cartItems.findMany({
+        where:{
+            userId:user.id
+        }
+    })
+
     const totalPrice = userWithCartItems.cartItems.reduce((acc:any, cartItem:any) => {
             // Multiply the product price by the cart item quantity and add to accumulator
             return acc + (cartItem.product.price * cartItem.quantity);
@@ -42,7 +48,14 @@ export const createOrder = async(req:Request, res:Response) => {
             data:{
                 address,
                 userId : user.id,
-                totalAmount:totalPrice
+                totalAmount:totalPrice,
+                items
+            }
+        })
+
+        await prisma.cartItems.deleteMany({
+            where:{
+                userId:user.id
             }
         })
 

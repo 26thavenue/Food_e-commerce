@@ -32,12 +32,15 @@ model User{
   @@map("users")
 }
 
+
+
 model Products{
   id      String @id @default(uuid())
   name String
   price Float
   imageUrl String
   description String
+  numberInStock Int @default(30)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   cartItems CartItems[]
@@ -58,6 +61,7 @@ model CartItems{
   @@map("cartItems")
 }
 
+
 model Order{
   id      String @id @default(uuid())
   createdAt DateTime @default(now())
@@ -67,6 +71,7 @@ model Order{
   totalAmount Float
   address String
   status String @default("PENDING")
+  items Json[]
 
   @@map("orders" )
   
